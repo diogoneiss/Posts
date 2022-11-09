@@ -6,7 +6,15 @@ Caso utilize Test-Driven-Development, ou TDD, os testes serão escritos antes de
 
 Uma dica útil é criar testes quando bugs forem reportados, garantindo que uma vez resolvido o problema não volte.
 
-## Estrutura de um teste
+## Princípios F.I.R.S.T
+
+* F : Fast / Veloz, sendo executáveis rapidamente pelo desenvolvedor, providenciando **feedback rápido**
+* I: Independent / Independente, garantindo que a ordem de execução  não afete o teste, apenas seu contexto local. Isso **reduz o acoplamento e aumenta a coesão**
+* R: Repeatable / Repetíveis, possibilitando consistência entre diferentes ambientes de execução e ordens de chamada dos testes. Isso torna os testes **determinísticos**
+* Self Validating / Auto validantes, emitindo os testes que passaram, falharam ou deram erro sem interpretação do programador. Isso é exatamente o que torna as unidades de um sistema **testáveis**. Imagine verificar manualmente toda execução se um caso passou?
+* Thorough / Minuciosos, cobrindo o comportamento esperado para a funcionalidade e seus casos de excessão, como o que acontece com números fora do limite especificado, strings vazias, parâmetros de tipos inesperados, de modo que o teste tenha melhor **corretude**
+
+### Estrutura de um teste
 
 Comumente os testes são escritos em três etapas:
 
@@ -18,7 +26,7 @@ Fixtures são amplamente utilizadas e representam o ambiente usado para o teste,
 
 É também conhecido como Given-When-then/Dado-Quando-Então, uma abordagem mais orientada a comportamentos, e Setup-Exercise-Verify-Teardown / Configuração-Execução/Verificação/Desmanche, modelo de 4 fases para testes mais focados no uso de funções de contextualização (fixtures) e seu ciclo de vida.
 
-## setUp e tearDown
+### Contexto de um teste: setUp e tearDown
 
 A metodologia Setup-Exercise-Verify-Teardown exemplifica bem esses conceitos, com todo teste iniciando com uma configuração inicial e, após todas as asserções, a destruição do teste. Esses métodos especiais implementam isso de acordo com a necessidade de ciclo de vida da fixture, ou seja, é possível criar um setUp único para toda a suite de testes, um setUp para a classe com todos os testes, um setUp a ser rodado antes de toda função (o padrão).
 
